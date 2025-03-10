@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import UserItem from "../UserItem/UserItem";
 
 const UserList = ({userData}) => {

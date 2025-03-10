@@ -15,8 +15,8 @@ function App() {
 
   return (
     <>
-      <UserForm></UserForm>
-      <UserList userData={userData} setUser={setUser}></UserList>
+      <UserForm setUser={setUser}></UserForm>
+      <UserList userData={userData}></UserList>
     </>
   )
 }
