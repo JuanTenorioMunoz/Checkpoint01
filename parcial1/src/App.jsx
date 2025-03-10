@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import UserForm from './components/UserForm/UserForm'
+import UserList from './components/UserList/UserList';
+import data from './data/data';
 
 function App() {
 
-  const [userData, setUserData] = useState;
+  const [userData, setUserData] = useState(data);
 
-  useEffect(() => {
-    fetch('./data.json')
-    .then((response) => response.json())
-    .then((data) =>  console.log("RESOII" + JSON.stringify(data)))
-  })
+  const setUser = (name, email, role) => {
+    setUserData((prevData) =>
+      [...prevData, {name, email, role}])
+  }
 
   return (
     <>
       <UserForm></UserForm>
+      <UserList userData={userData} setUser={setUser}></UserList>
     </>
   )
 }

@@ -1,20 +1,21 @@
-const UserList = () => {
+import UserItem from "../UserItem/UserItem";
 
-    const handleSubmit = (event) => {
-		event.preventDefault();
-	};
+const UserList = ({userData}) => {
 
-    return(
-        userData.map((user)=>
-            <div className="user-form">
-             <form onSubmit={handleSubmit}>
-            <input className="name"></input>
-            <input className="email"></input>
-            <input className="role"></input>
-            <button type="sumbit">Submit</button>
-        </form>
-    </div>)
-        
+    console.log("data", userData)
+
+    return (
+        <div className="user-list">
+        {userData.map((user) => {
+            return(
+                <UserItem className="user-data" 
+                name={user.name} 
+                email={user.email}
+                role={user.role}
+                ></UserItem>
+            ) 
+        })}
+        </div>
     )
 }
 
